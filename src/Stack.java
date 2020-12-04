@@ -63,5 +63,36 @@ public class Stack {
 	{
 		return this.list.indexOf(i);
 	}
+	
+	public int  getAvailable()
+	{
+		return this.available;
+	}
+	public int getSize()
+	{
+		return this.size;
+	}
+	public Stack setSize(int s)
+	{
+		while(s<=this.available && this.size>0)
+		{
+			try {
+				this.pop();
+			} catch (Exception e) {
+				System.err.println("Can't set a size of the stack!");
+			}
+		}
+		this.size = size;
+		return this;
+	}
+	public ArrayList<Integer> getList()
+	{
+		return this.list;
+	}
+	
+	public String toString()
+	{
+		return "{\n "+"sise: "+this.size+"\n available: "+this.available+"\n content :"+this.list.toString()+"\n}";
+	}
 
 }
